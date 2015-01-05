@@ -1,4 +1,17 @@
 <template name="gameRoomLobby">
-  <h1>THIS IS GAMEROOM</h1>
-  <a href="{{pathFor 'gameRoomCreate'}}" class="btn btn-primary create-new-game">Create New Game</a>
+
+  <h1 class="header">Game lobby</h1>
+
+
+  <button class="btn btn-primary" data-toggle="modal" data-target="#create-game-room">Create Game Room</button>
+  <div id="create-game-room" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          {{> gameRoomCreate}}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </template>

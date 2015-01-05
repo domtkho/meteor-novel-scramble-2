@@ -1,5 +1,3 @@
-Template.gameRoomLobby.events({
-  'click .create-new-game': function () {
-
-  }
-});
+Template.gameRoomLobby.rendered = function () {
+  $.material.init();
+};
