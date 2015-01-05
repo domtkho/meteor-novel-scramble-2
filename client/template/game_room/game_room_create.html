@@ -1,23 +1,108 @@
 <template name="gameRoomCreate">
+  <div class="form-background">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Create New Game Room</legend>
 
-  <h1>Create New Game Room</h1>
+        <div class="form-group">
+          <label for="title" class="col-lg-2 control-label">Title</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="title" placeholder="Title" required>
+          </div>
+        </div>
 
-  <form class="create-game-form">
-    <h2 class="create-game-form-step-titles">Step 1 - Pick novel title</h2>
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" class="form-control" placeholder="Title" />
+        <div class="form-group">
+          <label for="genre" class="col-lg-2 control-label">Genre</label>
+          <div class="col-lg-10">
+            <select class="form-control" id="genre">
+              <option>Comedy</option>
+              <option>Drama</option>
+              <option>Epic</option>
+              <option>Erotic</option>
+              <option>Nonsense</option>
+              <option>Romance</option>
+              <option>Satire</option>
+              <option>Tragedy</option>
+              <option>Tragicomedy</option>
+            </select>
+          </div>
+        </div>
 
-    <h2 class="create-game-form-step-titles">Step 2 - Select genre</h2>
-    <label for="genre">Genre</label>
-    <input type="text" id="genre" name="genre" class="form-control" placeholder="Title" />
+        <div class="form-group">
+          <label for="introduction-paragraph" class="col-lg-2 control-label">Introduction</label>
+          <div class="col-lg-10">
+            <textarea class="form-control" rows="3" id="introduction-paragraph" required></textarea>
+            <span class="help-block">Compose the beginning paragraph of the novel, other novelists will continue writing based on your script.</span>
+          </div>
+        </div>
 
-    <h2 class="create-game-form-step-titles">Step 3 - Compose introduction paragraph</h2>
-    <label for="intro">Introduction</label>
-    <input type="text" id="intro" name="intro" class="form-control" placeholder="Title" />
+        <div class="form-group">
+          <label for="select" class="col-lg-2 control-label">Minimum Players</label>
+          <div class="col-lg-10">
+            <select class="form-control" id="select" value="4">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option selected="selected">4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select" class="col-lg-2 control-label">Maximum Players</label>
+          <div class="col-lg-10">
+            <select class="form-control" id="select">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option selected="selected">8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+            </select>
+          </div>
+        </div>
 
-    <h2 class="create-game-form-step-titles">Step 4 - Game configurations</h2>
-    <label for="title">Settings</label>
-    <input type="text" id="" name="title" class="form-control" placeholder="Title" />
+        <div class="form-group">
+          <label for="privateGameToggle" class="col-lg-2 control-label">Private Mode</label>
+          <div class="col-lg-10">
+            <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+            <div class="togglebutton">
+              <label>
+                <input type="checkbox" checked="">
+              </label>
+            </div>
+          </div>
+        </div>
 
-  </form>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
 </template>
