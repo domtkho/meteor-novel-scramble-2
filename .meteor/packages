@@ -11,3 +11,7 @@ mizzao:bootstrap-3
 underscore
 ian:accounts-ui-bootstrap-3
 accounts-password
+iron:router
+accounts-facebook
+less
+fezvrasta:bootstrap-material-design
