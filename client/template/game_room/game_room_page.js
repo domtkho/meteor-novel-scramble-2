@@ -38,5 +38,18 @@ Template.gameRoomPage.events({
     var userId = Meteor.userId();
     var gameRoomId = template.data._id;
     Meteor.call('leaveGameRoom', userId, gameRoomId, function (error, result) {});
-  }
+  },
+
+  'mouseenter .occupied-slot': function (event) {
+    var $this = $(event.target);
+    $this.find("button.leave-game-room").show();
+    $this.find(".current-user").hide();
+  },
+
+  'mouseleave .occupied-slot': function (event) {
+    var $this = $(event.target);
+    $this.find("button.leave-game-room").hide();
+    $this.find(".current-user").show();
+  },
+
 });

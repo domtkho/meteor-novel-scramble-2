@@ -2,3 +2,7 @@ h1.game-page-title {
   font-size: 36px;
   text-align: center;
 }
+
+button.leave-game-room {
+  display: none;
+}
