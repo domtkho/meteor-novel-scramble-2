@@ -5,6 +5,10 @@ Template.gameRoomList.helpers({
 
   novelistsCount: function(maxNumberOfNovelists, array){
     return (maxNumberOfNovelists - array.length);
+  },
+
+  novelistName: function(novelistId){
+    return Meteor.users.findOne({_id: novelistId}).profile.name;
   }
 });
 

@@ -1,22 +1,26 @@
 <template name="gameRoomList">
-  <table class="table table-striped table-hover ">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Genre</th>
-        <th>Novelist Slots</th>
-        <th>Join Game Room</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each gameRooms}}
-      <tr>
-        <td>{{this.title}}</td>
-        <td>{{this.genre}}</td>
-        <td> {{novelistsCount this.maxPlayer this.novelists}} / {{this.maxPlayer}}</td>
-        <td><a href="{{pathFor 'gameRoomPage'}}" class="btn btn-primary join-room">Join</a></td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <ul class="game-room-list">
+    {{#each gameRooms}}
+      <li class="game-room-list-item">
+        <div>
+          <a href="{{pathFor 'gameRoomPage'}}" class="game-room-item">
+
+            <div class="game-room-votes-container">
+              <span class="game-room-votes">22</span>points
+            </div>
+
+            <div class="pull-left game-room-title-owner-container">
+              {{this.title}}<span class="game-room-owner"> by {{novelistName this.gameOwner}}</span>
+              <span class="label label-primary genre-label">{{this.genre}}</span>
+            </div>
+
+          </a>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+
+
 </template>
+
+<!-- {{novelistsCount this.maxPlayer this.novelists}} / {{this.maxPlayer}} -->
