@@ -1,0 +1,22 @@
+<template name="gameRoomList">
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Novelist Slots</th>
+        <th>Join Game Room</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each gameRooms}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.genre}}</td>
+        <td> {{novelistsCount this.maxPlayer this.novelists}} / {{this.maxPlayer}}</td>
+        <td><a href="{{pathFor 'gameRoomPage'}}" class="btn btn-primary join-room">Join</a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

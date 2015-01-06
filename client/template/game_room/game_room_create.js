@@ -7,18 +7,20 @@ Template.gameRoomCreate.events({
     event.preventDefault();
 
     var gameRoomProperties = {
-      gameOwner: Meteor.userId(),
       title: $(event.target).find('[name=title]').val(),
       genre: $(event.target).find('[name=genre]').val(),
       intro: $(event.target).find('[name=introduction-paragraph]').val(),
       minPlayer: parseInt($(event.target).find('[name=min-player]').val()),
       maxPlayer: parseInt($(event.target).find('[name=max-player]').val()),
-      privateMode: $(event.target).find('[name=private-mode]').val(),
-      novelists: [Meteor.userId()],
+      privateMode: $(event.target).find('[name=private-mode]').val() === "true",
     };
 
-    console.log(gameRoomProperties);
-    // GameRooms.insert(gameRoomProperties);
+    Meteor.call('createGameRoom', gameRoomProperties, function (error, result) {});
     $('#create-game-room').modal('hide');
+  },
+
+  'click #private-mode': function(){
+    var checked = $('#private-mode').val() === "true";
+    $('#private-mode').val(checked? "false" : "true");
   }
 });
