@@ -6,3 +6,22 @@ Template.timerPanel.events({
     Meteor.call('beginGameAndSetTimers', gameRoomProperties, function (error, result) {});
   }
 });
+
+Template.timerPanel.helpers({
+  currentPhaseTimeRemaining: function () {
+    return Session.get('currentPhaseRemainingTimePretty');
+  }
+});
+
+Template.timerPanel.rendered = function () {
+
+  var currentGameRoomId = this.data._id;
+
+  updateTimers = function(){
+    Session.set('currentPhaseRemainingTimePretty', util.currentPhaseTimeRemaining(currentGameRoomId));
+    Meteor.setTimeout(updateTimers, 100);
+  };
+
+  updateTimers();
+
+};
