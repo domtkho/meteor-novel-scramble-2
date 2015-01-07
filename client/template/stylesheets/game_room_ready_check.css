@@ -2,3 +2,14 @@ h1.game-room-ready-check-title {
   font-size: 28px;
   text-align: center;
 }
+
+div.ready-check-buttons {
+  text-align: center;
+  margin: 30px 0;
+}
+
+button.not-ready-button,
+button.ready-button {
+  width: 150px;
+  margin: 0 30px;
+}
