@@ -34,6 +34,19 @@
     </div> <!-- close container -->
   </div> <!-- close novelist-panel -->
 
-  <h1 class="game-page-title">{{this.title}}</h1>
+
+  <div class="container">
+
+    <div class="col-md-6">
+      <h1 class="game-page-title">{{this.title}} <span class="label label-primary genre-label">{{this.genre}}</span></h1>
+      {{> scriptsChosenPanel}}
+    </div>
+
+    <div class="col-md-6">
+      {{> timerPanel}}
+      {{> scriptsInputForm}}
+      }
+    </div>
+  </div>
 
 </template>

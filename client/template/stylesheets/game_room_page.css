@@ -10,8 +10,9 @@ h1.novelist-panel-title {
 }
 
 h1.game-page-title {
-  font-size: 36px;
+  font-size: 28px;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 button.leave-game-room {

@@ -1,10 +1,7 @@
 Template.gameRoomPage.helpers({
-  maxNumberOfNovelists: function() {
-    return this.maxPlayer;
-  },
 
   novelists: function () {
-    var availableSlots = this.maxPlayer - this.novelists.length;
+    var availableSlots = this.numberOfPlayers - this.novelists.length;
     dummyArray = this.novelists;
     for (var i = 0; i < availableSlots; i++) {
       dummyArray.push(null);

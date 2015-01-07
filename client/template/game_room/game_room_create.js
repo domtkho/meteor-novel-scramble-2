@@ -10,9 +10,9 @@ Template.gameRoomCreate.events({
       title: $(event.target).find('[name=title]').val(),
       genre: $(event.target).find('[name=genre]').val(),
       intro: $(event.target).find('[name=introduction-paragraph]').val(),
-      minPlayer: parseInt($(event.target).find('[name=min-player]').val()),
-      maxPlayer: parseInt($(event.target).find('[name=max-player]').val()),
+      numberOfPlayers: parseInt($(event.target).find('[name=number-of-players]').val()),
       privateMode: $(event.target).find('[name=private-mode]').val() === "true",
+      currentPhase: "Waiting for more players"
     };
 
     Meteor.call('createGameRoom', gameRoomProperties, function (error, result) {});
