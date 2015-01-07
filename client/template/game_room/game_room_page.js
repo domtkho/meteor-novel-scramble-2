@@ -29,6 +29,12 @@ Template.gameRoomPage.events({
     var userId = Meteor.userId();
     var gameRoomId = template.data._id;
     Meteor.call('joinGameRoom', userId, gameRoomId, function (error, result) {});
+
+    var gameRoom = GameRooms.findOne({_id: template.data._id});
+    if( (gameRoom.numberOfPlayers === gameRoom.novelists.length) && (gameRoom.currentPhase === "Waiting for more players") ){
+      // Append modal for ready check
+      $('#ready-check-panel').modal('show');
+    }
   },
 
   'click .leave-game-room': function (event, template) {

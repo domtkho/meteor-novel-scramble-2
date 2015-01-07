@@ -19,7 +19,7 @@ Template.timerPanel.rendered = function () {
 
   updateTimers = function(){
     Session.set('currentPhaseRemainingTimePretty', util.currentPhaseTimeRemaining(currentGameRoomId));
-    Meteor.setTimeout(updateTimers, 100);
+    Meteor.setTimeout(updateTimers, 50);
   };
 
   updateTimers();

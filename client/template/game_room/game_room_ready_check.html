@@ -1,0 +1,23 @@
+<template name="gameRoomReadyCheck">
+  <h1 class="game-room-ready-check-title">Ready Check!</h1>
+  <div>
+    <button class="btn btn-success">Ready</button>
+    <button class="btn btn-warning" data-dismiss="modal">Not Ready</button>
+  </div>
+
+  <div>
+    {{#each novelists}}
+      <div class="col-md-6">
+        <div class="list-group-item occupied-slot">
+          <div class="row-picture">
+            <img class="circle" src="{{novelistProfilePicture this}}" alt="icon">
+          </div>
+          <div class="row-content">
+              <span class="list-group-item-heading">{{novelistName this}}</span>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</template>
