@@ -1,0 +1,26 @@
+div.novelist-panel {
+  background-color: #FFF;
+  padding: 20px;
+  width: 100%;
+}
+
+h1.novelist-panel-title {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+h1.game-page-title {
+  font-size: 36px;
+  text-align: center;
+}
+
+button.leave-game-room {
+  display: none;
+}
+
+.list-group .list-group-item .row-content {
+  min-height: 56px;
+}
+
+span.list-group-item-heading {
+}
