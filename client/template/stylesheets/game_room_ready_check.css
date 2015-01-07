@@ -8,8 +8,8 @@ div.ready-check-buttons {
   margin: 30px 0;
 }
 
-button.not-ready-button,
-button.ready-button {
+button.decline-button,
+button.accept-button {
   width: 150px;
   margin: 0 30px;
 }

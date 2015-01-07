@@ -31,9 +31,10 @@ Template.gameRoomPage.events({
     Meteor.call('joinGameRoom', userId, gameRoomId, function (error, result) {});
 
     var gameRoom = GameRooms.findOne({_id: template.data._id});
+
     if( (gameRoom.numberOfPlayers === gameRoom.novelists.length) && (gameRoom.currentPhase === "Waiting for more players") ){
-      // Append modal for ready check
       $('#ready-check-panel').modal('show');
+      Session.set("slotsFilled", true);
     }
   },
 
@@ -55,4 +56,13 @@ Template.gameRoomPage.events({
     $this.find(".current-user").show();
   },
 
+});
+
+Tracker.autorun(function () {
+  if( Session.get("slotsFilled") === true ) {
+
+    // Append modal for ready check
+    console.log("FILLED")
+    $('#ready-check-panel').modal('show');
+  }
 });

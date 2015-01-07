@@ -16,14 +16,14 @@ Template.gameRoomReadyCheck.helpers({
 });
 
 Template.gameRoomReadyCheck.events({
-  'click .ready-button': function () {
+  'click .accept-button': function () {
     var gameRoomId = this._id;
-    Meteor.call('userIsReady', gameRoomId, function (error, result) {});
+    Meteor.call('userAccept', gameRoomId, function (error, result) {});
   },
 
-  'click .not-ready-button': function () {
+  'click .decline-button': function () {
     var gameRoomId = this._id;
-    Meteor.call('userIsNotReady', gameRoomId, function (error, result) {});
+    Meteor.call('userDecline', gameRoomId, function (error, result) {});
   },
 
 });
