@@ -44,7 +44,6 @@ Template.gameRoomReadyCheck.rendered = function () {
   var gameRoomId = this.data._id;
 
   allNovelistsRespondedCheck =  function() {
-    console.log("In response check!");
     var gameRoom = GameRooms.findOne({_id: gameRoomId});
     var readyCheck = ReadyChecks.findOne({gameRoomId: gameRoomId});
     if ( (readyCheck.accepted.length + readyCheck.declined.length ===  gameRoom.numberOfPlayers) && (gameRoom.currentPhase === "Waiting for more players") ){

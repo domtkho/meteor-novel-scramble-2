@@ -68,7 +68,7 @@ Template.gameRoomPage.rendered = function () {
 
   switchPhaseCheck = function() {
     var gameRoom = GameRooms.findOne({_id: gameRoomId});
-    if ((moment(gameRoom.currentPhaseEndTime) - moment()) < 0) {
+    if ((moment(gameRoom.currentPhaseEndTime) - moment()) < 0 && gameRoom.currentPhase !== "Waiting for more players") {
       Meteor.call('switchPhaseAndSetTimers', gameRoom._id, function (error, result) {});
     }
 
