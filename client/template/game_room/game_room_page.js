@@ -59,6 +59,8 @@ Template.gameRoomPage.rendered = function () {
     Session.set("gameRoomNovelistSlotsFilled", (gameRoom.numberOfPlayers === gameRoom.novelists.length) && (gameRoom.currentPhase === "Waiting for more players"));
     if (Session.get("gameRoomNovelistSlotsFilled")){
       $('#ready-check-panel').modal('show');
+    } else {
+      $('#ready-check-panel').modal('hide');
     }
     Meteor.setTimeout(modalCheck, 500);
   };

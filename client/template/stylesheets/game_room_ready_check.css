@@ -13,3 +13,19 @@ button.accept-button {
   width: 150px;
   margin: 0 30px;
 }
+
+i.novelist-accepted {
+  background-color: green;
+  color: #FFF;
+  font-size: 24px;
+  border-radius: 100px;
+  padding: 3px;
+}
+
+i.novelist-declined {
+  background-color: red;
+  color: #FFF;
+  font-size: 24px;
+  border-radius: 100px;
+  padding: 3px;
+}

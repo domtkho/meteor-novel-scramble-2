@@ -14,7 +14,13 @@
               <img class="circle" src="{{novelistProfilePicture this}}" alt="icon">
             </div>
             <div class="row-content">
-                <span class="list-group-item-heading">{{novelistName this}}</span>
+              <span class="list-group-item-heading">{{novelistName this}}</span>
+                {{#if novelistAccepted this}}
+                  <i class="mdi-navigation-check novelist-accepted"></i>
+                {{/if}}
+                {{#if novelistDeclined this}}
+                  <i class="mdi-navigation-close novelist-declined"></i>
+                {{/if}}
             </div>
           </div>
         </div>

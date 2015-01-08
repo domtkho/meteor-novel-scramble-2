@@ -2,6 +2,8 @@
   <div class="well">
     <button class="btn btn-primary start-timer">Start</button>
     {{this.currentPhase}}
-    {{currentPhaseTimeRemaining}}
+    {{#if showTimer}}
+      {{currentPhaseTimeRemaining}}
+    {{/if}}
   </div>
 </template>
