@@ -47,7 +47,7 @@ Template.gameRoomReadyCheck.rendered = function () {
   allNovelistsRespondedCheck =  function() {
     var readyCheck = ReadyChecks.findOne({gameRoomId: gameRoomId});
 
-    if ( readyCheck.accepted.length + readyCheck.declined.length ===  gameRoom.numberOfPlayers){
+    if ( readyCheck.accepted.length + readyCheck.declined.length ===  gameRoom.numberOfPlayers ){
       Meteor.call('readyCheckResult', gameRoomId, function (error, result) {});
     }
     Meteor.setTimeout(allNovelistsRespondedCheck, 500);
