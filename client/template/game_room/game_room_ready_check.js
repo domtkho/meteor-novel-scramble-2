@@ -42,15 +42,16 @@ Template.gameRoomReadyCheck.events({
 
 Template.gameRoomReadyCheck.rendered = function () {
   var gameRoomId = this.data._id;
-  var gameRoom = GameRooms.findOne({_id: gameRoomId});
 
   allNovelistsRespondedCheck =  function() {
+    var gameRoom = GameRooms.findOne({_id: gameRoomId});
     var readyCheck = ReadyChecks.findOne({gameRoomId: gameRoomId});
-
-    if ( readyCheck.accepted.length + readyCheck.declined.length ===  gameRoom.numberOfPlayers ){
+    if ( (readyCheck.accepted.length + readyCheck.declined.length ===  gameRoom.numberOfPlayers) && (gameRoom.currentPhase === "Waiting for more players") ){
       Meteor.call('readyCheckResult', gameRoomId, function (error, result) {});
     }
-    Meteor.setTimeout(allNovelistsRespondedCheck, 500);
+    if (gameRoom.currentPhase === "Waiting for more players") {
+      Meteor.setTimeout(allNovelistsRespondedCheck, 50);
+    }
   };
   allNovelistsRespondedCheck();
 };

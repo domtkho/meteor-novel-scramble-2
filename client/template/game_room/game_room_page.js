@@ -62,8 +62,20 @@ Template.gameRoomPage.rendered = function () {
     } else {
       $('#ready-check-panel').modal('hide');
     }
-    Meteor.setTimeout(modalCheck, 500);
+    Meteor.setTimeout(modalCheck, 50);
   };
   modalCheck();
+
+  switchPhaseCheck = function() {
+    var gameRoom = GameRooms.findOne({_id: gameRoomId});
+    if ((moment(gameRoom.currentPhaseEndTime) - moment()) < 0) {
+      Meteor.call('switchPhaseAndSetTimers', gameRoom._id, function (error, result) {});
+    }
+
+    Session.set('currentPhaseRemainingTimePretty', util.currentPhaseTimeRemaining(gameRoomId));
+    Meteor.setTimeout(switchPhaseCheck, 500);
+  };
+  switchPhaseCheck();
+
 
 };
