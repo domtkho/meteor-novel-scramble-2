@@ -23,5 +23,9 @@ Template.scriptsCurrentChapterScripts.helpers({
 Template.scriptsCurrentChapterScripts.events({
   'click .script-upvote': function () {
     Meteor.call('scriptUpvote', this, function (error, result) {});
-  }
+  },
+
+  'click .cancel-vote': function () {
+    Meteor.call('cancelVote', this, function (error, result) {});
+  },
 });

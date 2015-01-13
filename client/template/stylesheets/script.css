@@ -1,9 +1,9 @@
-button.script-upvote {
+button.vote-button {
   border: none;
   border-radius: 100px;
   font-size: 18px;
-  padding: 8px;
-  margin: 0;
+  padding: 10px;
+  margin: 0 0 0 10px;
 }
 
 span.popularity {

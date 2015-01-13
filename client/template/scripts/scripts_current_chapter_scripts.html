@@ -11,16 +11,16 @@
         <span class="popularity">Popularity: {{percentageVoteOnCurrentScript}}%</span>
         {{#if userHasNotVoted}}
           <span>
-            <button class="script-upvote mdi-action-thumb-up btn-info "></button>
+            <button class="vote-button script-upvote mdi-action-thumb-up btn-info"></button>
           </span>
         {{else}}
           {{#if scriptUserVotedOn}}
             <span>
-              <button class="script-upvote mdi-action-thumb-up btn-success disabled"></button>
+              <button class="vote-button cancel-vote mdi-action-thumb-up btn-success"></button>
             </span>
           {{else}}
             <span>
-              <button class="script-upvote mdi-action-thumb-up btn-warning disabled"></button>
+              <button class="vote-button mdi-action-https"></button>
             </span>
           {{/if}}
         {{/if}}

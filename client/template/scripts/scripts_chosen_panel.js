@@ -14,7 +14,7 @@ Template.scriptsChosenPanel.helpers({
   },
 
   chosenScripts: function () {
-    var latestChapter = this.currentChapter;
+    var latestChapter = this.currentChapter - 1;
     var chosenScripts = [];
     for (var i = 1; i <= latestChapter; i++) {
       chosenScripts.push( Scripts.find({gameRoomId: this._id, chapter: i}, {sort: {voteCount: -1}, limit: 1 } ).fetch()[0]) ;
