@@ -2,36 +2,8 @@
 
   <div class="list-group novelist-panel">
     <div class="container">
-      <!-- <h1 class="novelist-panel-title">Novelists</h1> -->
-      {{#each novelists}}
-        <div class="col-md-3">
-          {{#if this}}
-            <div class="list-group-item occupied-slot">
-              <div class="row-picture">
-                <img class="circle" src="{{novelistProfilePicture this}}" alt="icon">
-              </div>
-              <div class="row-content">
-                {{#if isCurrentUser this}}
-                  <span class="list-group-item-heading current-user">{{novelistName this}}</span>
-                  <button class="btn btn-warning leave-game-room">Leave</button>
-                {{else}}
-                  <span class="list-group-item-heading">{{novelistName this}}</span>
-                {{/if}}
-              </div>
-            </div>
-            {{else}}
-            <div class="list-group-item">
-              <div class="row-picture">
-                <img class="circle" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="icon">
-              </div>
-              <div class="row-content">
-                <h4 class="btn btn-success join-game-room">Join</h4>
-              </div>
-            </div>
-          {{/if}}
-        </div>
-      {{/each}}
-    </div> <!-- close container -->
+      {{> gameRoomNovelists}}
+    </div>
 
     <!-- Ready check modal -->
     <div id="ready-check-panel" class="modal fade" data-backdrop="static" tabindex="-1">

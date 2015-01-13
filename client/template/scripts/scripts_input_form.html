@@ -1,25 +1,31 @@
 <template name="scriptsInputForm">
-  {{#if userHasNotSubmittedScript}}
-    <form class="form-horizontal">
-      <fieldset>
-        <!-- <legend>Scripts</legend> -->
-        <div class="well">
-          <div class="form-group">
-            <div class="col-md-12">
-              <strong>Chapter {{this.currentChapter}}</strong>
-              <textarea class="form-control" rows="10" id="script-paragraph" name="script-paragraph" placeholder="Continue the novel" required></textarea>
-              <span class="help-block">Continue the novel, draft your script and submit before the time runs out!</span>
+  {{#if showSubmitForm}}
+    {{#if userHasNotSubmittedScript}}
+      <form class="form-horizontal">
+        <fieldset>
+          <!-- <legend>Scripts</legend> -->
+          <div class="well">
+            <div class="form-group">
+              <div class="col-md-12">
+                <strong>Chapter {{this.currentChapter}}</strong>
+                <textarea class="form-control" rows="10" id="script-paragraph" name="script-paragraph" placeholder="Continue the novel" required></textarea>
+                <span class="help-block">Continue the novel, draft your script and submit before the time runs out!</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-2">
+                <button type="submit" class="btn btn-primary submit-script-button">Submit</button>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-lg-2">
-              <button type="submit" class="btn btn-primary submit-script-button">Submit</button>
-            </div>
-          </div>
-        </div>
-
-      </fieldset>
-    </form>
+        </fieldset>
+      </form>
+    {{else}}
+      <div class="well">
+        <p>Script submitted!</p>
+      </div>
+    {{/ if}}
   {{/ if}}
 </template>

@@ -1,7 +1,31 @@
 <template name="scriptsCurrentChapterScripts">
   {{# each allScriptsForThisChapter}}
-    <div class="well">
-      {{this.script}}
+    <div class="well clearfix">
+      <div>
+        {{this.script}}
+      </div>
+      <!-- <div class="progress">
+        <div class="progress-bar progress-bar-info" style="width: {{percentageVoteOnCurrentScript}}%"></div>
+      </div> -->
+      <div class="pull-right">
+        <span class="popularity">Popularity: {{percentageVoteOnCurrentScript}}%</span>
+        {{#if userHasNotVoted}}
+          <span>
+            <button class="script-upvote mdi-action-thumb-up btn-info "></button>
+          </span>
+        {{else}}
+          {{#if scriptUserVotedOn}}
+            <span>
+              <button class="script-upvote mdi-action-thumb-up btn-success disabled"></button>
+            </span>
+          {{else}}
+            <span>
+              <button class="script-upvote mdi-action-thumb-up btn-warning disabled"></button>
+            </span>
+          {{/if}}
+        {{/if}}
+      </div>
+
     </div>
   {{/ each}}
 </template>

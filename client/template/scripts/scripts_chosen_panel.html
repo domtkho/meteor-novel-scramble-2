@@ -3,4 +3,10 @@
     <p><strong>Prologue</strong> <span class="game-room-owner"> by {{novelistName this.gameOwner}}</span></p>
     {{this.intro}}
   </div>
+  {{#each chosenScripts}}
+    <div class="well">
+      <p><strong>Chapter {{this.chapter}}</strong> <span class="game-room-owner"> by {{novelistName this.userId}}</span></p>
+      {{this.script}}
+    </div>
+  {{/each}}
 </template>

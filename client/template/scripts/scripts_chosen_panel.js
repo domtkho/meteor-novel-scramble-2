@@ -13,4 +13,13 @@ Template.scriptsChosenPanel.helpers({
     return Meteor.users.findOne({_id: novelistId}).profile.name;
   },
 
+  chosenScripts: function () {
+    var latestChapter = this.currentChapter;
+    var chosenScripts = [];
+    for (var i = 1; i <= latestChapter; i++) {
+      chosenScripts.push( Scripts.find({gameRoomId: this._id, chapter: i}, {sort: {voteCount: -1}, limit: 1 } ).fetch()[0]) ;
+    }
+    return _.compact(chosenScripts);
+  },
+
 });
