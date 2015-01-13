@@ -11,6 +11,7 @@ Template.scriptsInputForm.events({
     var scriptProperties = {
       script: script,
       gameRoomId: template.data._id,
+      chapter: template.data.currentChapter,
     };
 
     Meteor.call('createScriptSubmission', scriptProperties, function (error, result) {});

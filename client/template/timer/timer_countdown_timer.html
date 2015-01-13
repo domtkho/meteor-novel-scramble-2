@@ -1,5 +1,5 @@
 <template name="timerCountdownTimer">
-  {{#if showTimer}}
+  {{#if showTimer this.currentPhase}}
     <span class="current-phase-count-down">{{currentPhaseTimeRemaining}}</span>
   {{/if}}
 </template>

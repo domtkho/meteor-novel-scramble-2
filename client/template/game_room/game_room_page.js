@@ -68,14 +68,17 @@ Template.gameRoomPage.rendered = function () {
 
   switchPhaseCheck = function() {
     var gameRoom = GameRooms.findOne({_id: gameRoomId});
-    if ((moment(gameRoom.currentPhaseEndTime) - moment()) < 0 && gameRoom.currentPhase !== "Waiting for more players") {
+    if ((moment(gameRoom.currentPhaseEndTime) - moment()) < 0 && gameRoom.currentPhase !== "Waiting for more players" ) {
       Meteor.call('switchPhaseAndSetTimers', gameRoom._id, function (error, result) {});
     }
 
     Session.set('currentPhaseRemainingTimePretty', util.currentPhaseTimeRemaining(gameRoomId));
-    Meteor.setTimeout(switchPhaseCheck, 500);
+
+    if ( gameRoom.currentPhase !== "Game Ended" ) {
+      Meteor.setTimeout(switchPhaseCheck, 500);
+    }
   };
-  switchPhaseCheck();
+    switchPhaseCheck();
 
 
 };

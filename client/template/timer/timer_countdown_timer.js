@@ -3,7 +3,13 @@ Template.timerCountdownTimer.helpers({
     return Session.get('currentPhaseRemainingTimePretty');
   },
 
-  showTimer: function() {
-    return (this.currentPhase !== "Waiting for more players");
+  showTimer: function(currentPhase) {
+    var displayTimer = {
+     "Waiting for more players": false,
+     "Writing": true,
+     "Voting": true,
+     "Game Ended": false,
+    };
+    return displayTimer[currentPhase];
   }
 });
