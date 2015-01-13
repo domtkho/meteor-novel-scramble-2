@@ -7,12 +7,13 @@ Template.gameRoomCreate.events({
     event.preventDefault();
 
     var gameRoomProperties = {
-      title: $(event.target).find('[name=title]').val(),
-      genre: $(event.target).find('[name=genre]').val(),
-      intro: $(event.target).find('[name=introduction-paragraph]').val(),
-      numberOfPlayers: parseInt($(event.target).find('[name=number-of-players]').val()),
-      privateMode: $(event.target).find('[name=private-mode]').val() === "true",
-      currentPhase: "Waiting for more players"
+      title:            $(event.target).find('[name=title]').val(),
+      genre:            $(event.target).find('[name=genre]').val(),
+      intro:            $(event.target).find('[name=introduction-paragraph]').val(),
+      numberOfChapters: parseInt($(event.target).find('[name=number-of-chapters]').val()),
+      numberOfPlayers:  parseInt($(event.target).find('[name=number-of-players]').val()),
+      privateMode:      $(event.target).find('[name=private-mode]').val() === "true",
+      currentPhase:     "Waiting for more players",
     };
 
     Meteor.call('createGameRoom', gameRoomProperties, function (error, result) {});

@@ -1,9 +1,6 @@
 <template name="timerPanel">
-  <div class="well">
-    <button class="btn btn-primary start-timer">Start</button>
-    {{this.currentPhase}}
-    {{#if showTimer}}
-      {{currentPhaseTimeRemaining}}
-    {{/if}}
+  <div class="well timer-panel-container">
+    {{> timerCurrentPhase}}
+    {{> timerCountdownTimer}}
   </div>
 </template>
