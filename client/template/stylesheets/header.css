@@ -5,3 +5,24 @@ nav.navbar.navbar-default {
 ul.login-buttons li a {
   color: #FFF;
 }
+
+#login-dropdown-list > div > div.navbar-form > button {
+  background-color: #415E9B;
+}
+
+#login-dropdown-list input:last-of-type {
+  border-radius: 0;
+}
+
+div.or {
+  color: #5d5d5d;
+}
+
+#forgot-password-link,
+#signup-link {
+  color: #5d5d5d;
+}
+
+#back-to-login-link {
+
+}
