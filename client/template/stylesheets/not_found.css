@@ -1,0 +1,11 @@
+div.not-found-message-container {
+  text-align: center;
+}
+
+h2.not-found-error {
+  font-size: 100px;
+}
+
+p.not-found-error-message {
+  font-size: 18px;
+}

@@ -36,7 +36,9 @@ Template.gameRoomPage.rendered = function () {
     } else {
       $('#ready-check-panel').modal('hide');
     }
-    Meteor.setTimeout(modalCheck, 50);
+    if (gameRoom.currentPhase === "Waiting for more players") {
+      Meteor.setTimeout(modalCheck, 50);
+    }
   };
   modalCheck();
 
@@ -52,7 +54,7 @@ Template.gameRoomPage.rendered = function () {
       Meteor.setTimeout(switchPhaseCheck, 500);
     }
   };
-    switchPhaseCheck();
+  switchPhaseCheck();
 
 
 };
